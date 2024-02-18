@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const Product = () => {
@@ -25,8 +25,16 @@ const Product = () => {
                 <div className="product-category">{product.category}</div>
                 <div className="product-description">{product.description}</div>
                 <img src={product.image} alt={product.title} className="product-image"/>
-                <input type="number" />
-                <button>Add to Cart</button>
+                <input type="number" id={product.id}/>
+                <button onClick={ () => {
+                    const placedItems = parseInt(document.querySelector(`input[id="${product.id}"]`).value);
+                    setCart(() => {
+                        return {
+                            ...cart,
+                            [product.id]: cart[product.id] ? cart[product.id]+placedItems : placedItems
+                        }
+                    })
+                } }>Add to Cart</button>
     </div>
     )
 };
