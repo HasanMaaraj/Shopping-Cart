@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import CartContext from "./CartContext";
 
 const Product = () => {
     const { id } = useParams();
@@ -19,6 +20,7 @@ const Product = () => {
     if (error) return <p>A network error was encountered</p>;
     if (loading) return <p>Loading...</p>;
 
+    const {cart, setCart} = useContext(CartContext)
     return (
         <div className="product">
                 <div className="product-title">{product.title}</div>
