@@ -3,6 +3,9 @@ import App from "./App";
 import ErrorPage from "./ErrorPage";
 import Shop from "./Shop";
 import Product from "./Product";
+import CartContext from "./CartContext";
+import { useState } from "react";
+import Header from "./Header";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -21,7 +24,14 @@ const Router = () => {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  const [cart, setCart] = useState({})
+
+  return (
+  <CartContext.Provider value={{cart, setCart}}>
+    <Header />
+    <RouterProvider router={router} />
+  </CartContext.Provider>
+  );
 };
 
 export default Router;
