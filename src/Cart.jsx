@@ -19,7 +19,10 @@ const Cart = () => {
     useEffect(() => {
         urls.forEach(url => {
             fetch(url)
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) throw new Error("Server error");
+                    return response.json()
+                })
                 .then(data => setProducts([...products, data]))
         })
     }, [])
