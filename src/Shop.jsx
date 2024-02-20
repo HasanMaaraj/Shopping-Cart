@@ -2,6 +2,8 @@ import { useEffect, useState, useContext, createContext } from "react";
 import Card from "./Card";
 import  CartContext  from "./CartContext";
 import Header from "./Header";
+import Loading from "./Loading";
+import NetworkError from "./NetworkError";
 
 const Shop = () => {
 
@@ -22,8 +24,8 @@ const Shop = () => {
         }, [])
 
 
-        if (error) return <p>A network error was encountered</p>;
-        if (loading) return <p>Loading...</p>;
+        if (error) return <NetworkError />;
+        if (loading) return <Loading />;
 
     return (
         <div>

@@ -1,6 +1,9 @@
 import CartContext from "./CartContext";
 import { useContext, useEffect, useState } from "react";
 import Header from "./Header";
+import Loading from "./Loading";
+import NetworkError from "./NetworkError";
+
 const Cart = () => {
     const {cart, setCart} = useContext(CartContext);
     const [products, setProducts] = useState([]);
@@ -25,8 +28,8 @@ const Cart = () => {
         if (products.length === Object.keys(cart).length) setLoading(false)
     }, [products, cart])
 
-    if (error) return <p>A network error was encountered</p>;
-    if (loading) return <p>Loading...</p>;
+    if (error) return <NetworkError />;
+    if (loading) return <Loading />;
 
     return (
         <>

@@ -2,6 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CartContext from "./CartContext";
 import Header from "./Header";
+import Loading from "./Loading";
+import NetworkError from "./NetworkError";
+
 const Product = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null)
@@ -18,8 +21,8 @@ const Product = () => {
         .catch(error => setError(error))
         .finally(() => setLoading(false))
 
-    if (error) return <p>A network error was encountered</p>;
-    if (loading) return <p>Loading...</p>;
+    if (error) return <NetworkError />;
+    if (loading) return <Loading />;
 
     return (
         <div className="product">
