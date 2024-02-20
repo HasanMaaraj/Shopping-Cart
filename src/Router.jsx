@@ -6,6 +6,7 @@ import Product from "./Product";
 import CartContext from "./CartContext";
 import { useState } from "react";
 import Header from "./Header";
+import Cart from "./Cart";
 
 const Router = () => {
   const router = createBrowserRouter([
@@ -22,13 +23,17 @@ const Router = () => {
         path: "product/:id",
         element: <Product />,
     },
+    {
+      path: "cart",
+      element: <Cart />,
+    },
   ]);
 
   const [cart, setCart] = useState({})
 
   return (
   <CartContext.Provider value={{cart, setCart}}>
-    <Header />
+    {/* <Header /> */}
     <RouterProvider router={router} />
   </CartContext.Provider>
   );

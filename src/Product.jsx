@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CartContext from "./CartContext";
-
+import Header from "./Header";
 const Product = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null)
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
+    const {cart, setCart} = useContext(CartContext)
 
     fetch(`https://fakestoreapi.com/products/${id}`)
         .then(response=> {
@@ -20,9 +21,9 @@ const Product = () => {
     if (error) return <p>A network error was encountered</p>;
     if (loading) return <p>Loading...</p>;
 
-    const {cart, setCart} = useContext(CartContext)
     return (
         <div className="product">
+            <Header />
                 <div className="product-title">{product.title}</div>
                 <div className="product-category">{product.category}</div>
                 <div className="product-description">{product.description}</div>

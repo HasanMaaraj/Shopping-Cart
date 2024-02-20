@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext, createContext } from "react";
 import Card from "./Card";
 import  CartContext  from "./CartContext";
-
+import Header from "./Header";
 
 const Shop = () => {
 
@@ -27,6 +27,7 @@ const Shop = () => {
 
     return (
         <div>
+            <Header />
                 {products.map(product => {
                     return (
                         <Card product={product} key={product.id}/>
