@@ -35,7 +35,7 @@ const Cart = () => {
     if (loading) return <Loading />;
 
     return (
-        <>
+        <div className="container">
         <Header />
             
             {products.length > 1 ? products.map(product => {
@@ -46,7 +46,7 @@ const Cart = () => {
             <img src={product.image} alt={product.title} className="product-image"/>
             </>)
         }): <h2>Empty Cart</h2>}
-        </>
+        </div>
     )
 
 }

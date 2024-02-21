@@ -5,13 +5,14 @@ import Header from './Header';
 function App() {
 
   return (
-    <>
+    <div className='container'>
     <Header />
-
-    <h1>
-    <Link to='/shop'>shop</Link>
+    <div className="app">
+      <h1>
+      <Link to='/shop'>shop</Link>
     </h1>
-    </>
+    </div>
+    </div>
   )
 }
 

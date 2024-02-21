@@ -25,22 +25,28 @@ const Product = () => {
     if (loading) return <Loading />;
 
     return (
-        <div className="product">
+        <div className="container">
             <Header />
-                <div className="product-title">{product.title}</div>
-                <div className="product-category">{product.category}</div>
-                <div className="product-description">{product.description}</div>
-                <img src={product.image} alt={product.title} className="product-image"/>
-                <input type="number" id={product.id}/>
-                <button onClick={ () => {
-                    const placedItems = parseInt(document.querySelector(`input[id="${product.id}"]`).value);
-                    setCart(() => {
-                        return {
-                            ...cart,
-                            [product.id]: cart[product.id] ? cart[product.id]+placedItems : placedItems
-                        }
-                    })
-                } }>Add to Cart</button>
+            <div className="app">
+
+                <div className="product">
+
+                    <div className="product-title">{product.title}</div>
+                    <div className="product-category">{product.category}</div>
+                    <div className="product-description">{product.description}</div>
+                    <img src={product.image} alt={product.title} className="product-image"/>
+                    <input type="number" id={product.id}/>
+                    <button onClick={ () => {
+                        const placedItems = parseInt(document.querySelector(`input[id="${product.id}"]`).value);
+                        setCart(() => {
+                            return {
+                                ...cart,
+                                [product.id]: cart[product.id] ? cart[product.id]+placedItems : placedItems
+                            }
+                        })
+                    } }>Add to Cart</button>
+                </div>
+            </div>
     </div>
     )
 };

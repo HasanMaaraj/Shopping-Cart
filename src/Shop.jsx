@@ -28,13 +28,17 @@ const Shop = () => {
         if (loading) return <Loading />;
 
     return (
-        <div>
+        <div className="container">
             <Header />
-                {products.map(product => {
-                    return (
-                        <Card product={product} key={product.id}/>
-                        )
-                    })}
+            <div className="app">
+                <div className="shop-products">
+                    {products.map(product => {
+                        return (
+                            <Card product={product} key={product.id}/>
+                            )
+                        })}
+                </div>
+            </div>
         </div>
     )
 };
