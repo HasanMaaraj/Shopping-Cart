@@ -7,12 +7,22 @@ const Card = ({ product }) => {
     
     return (
         <div className="card">
+            
+            <div className="card-header">
             <Link to={`/product/${product.id}`} >
             <div className="product-title">{product.title}</div>
+            </Link>
             <div className="product-category">{product.category}</div>
-            <div className="product-description">{product.description}</div>
+            </div>
+
+            <div className="card-body">
+            <Link to={`/product/${product.id}`} >
             <img src={product.image} alt={product.title} className="product-image"/>
             </Link>
+            <div className="product-description"><p>{product.description}</p></div>
+            </div>
+
+            <div className="card-footer">
                     <input type="number" id={product.id}/>
                     <button onClick={ () => {
                         const placedItems = parseInt(document.querySelector(`input[id="${product.id}"]`).value);
@@ -23,6 +33,7 @@ const Card = ({ product }) => {
                             }
                         })
                     } }>Add to Cart</button>
+            </div>
         </div>
     )
 }
