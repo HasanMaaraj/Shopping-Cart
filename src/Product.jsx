@@ -27,7 +27,7 @@ const Product = () => {
     return (
         <div className="container">
             <Header />
-            <div className="app">
+            <main>
 
                 <div className="product">
 
@@ -46,7 +46,7 @@ const Product = () => {
                         })
                     } }>Add to Cart</button>
                 </div>
-            </div>
+            </main>
     </div>
     )
 };

@@ -5,12 +5,12 @@ const NetworkError = () => {
     return (
         <div className="container">
             <Header />
-            <div className="app">
+            <main>
                 <p>A network error was encountered</p>
                 <Link to="/">
                 You can go back to the home page by clicking here, though!
                 </Link>
-            </div>
+            </main>
         </div>
     )
 }

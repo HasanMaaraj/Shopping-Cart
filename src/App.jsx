@@ -7,11 +7,11 @@ function App() {
   return (
     <div className='container'>
     <Header />
-    <div className="app">
+    <main>
       <h1>
       <Link to='/shop'>shop</Link>
     </h1>
-    </div>
+    </main>
     </div>
   )
 }

@@ -37,15 +37,17 @@ const Cart = () => {
     return (
         <div className="container">
         <Header />
-            
+            <main>
+
             {products.length > 1 ? products.map(product => {
-            return (<>
+                return (<>
             <div className="product-title">{product.title}</div>
             <div className="product-category">{product.category}</div>
             <div className="product-description">{product.description}</div>
             <img src={product.image} alt={product.title} className="product-image"/>
             </>)
         }): <h2>Empty Cart</h2>}
+            </main>
         </div>
     )
 

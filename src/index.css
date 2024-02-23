@@ -78,7 +78,7 @@ header {
   grid-template-rows: 20vh 1fr;
 }
 
-.app {
+main {
   align-self: center;
   padding: 2rem;
   min-height: 70vh;

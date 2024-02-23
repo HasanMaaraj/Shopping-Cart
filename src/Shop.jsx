@@ -30,7 +30,7 @@ const Shop = () => {
     return (
         <div className="container">
             <Header />
-            <div className="app">
+            <main>
                 <div className="shop-products">
                     {products.map(product => {
                         return (
@@ -38,7 +38,7 @@ const Shop = () => {
                             )
                         })}
                 </div>
-            </div>
+            </main>
         </div>
     )
 };

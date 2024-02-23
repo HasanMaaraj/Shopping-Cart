@@ -4,9 +4,9 @@ const Loading = () => {
     return (
         <div className="container">
             <Header />
-            <div className="app">
+            <main>
             <p>Loading...</p>
-            </div>
+            </main>
         </div>
     )
 }
