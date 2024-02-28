@@ -30,11 +30,24 @@ const Cart = () => {
             <main>
             {Object.keys(products).length}
             {Object.keys(cart).length > 0 ? products.map(product => {
-                return (<div className="cart-product" key={uuidv4()}>
+                return (<div className="cart-product" id={`cart-product-${product.id}`}  key={uuidv4()}>
             <div className="product-title">{product.title}</div>
             <div className="product-category">{product.category}</div>
             <div className="product-description">{product.description}</div>
             <img src={product.image} alt={product.title} className="product-image"/>
+            <input type="number" id={`cart-${product.id}-value`} defaultValue={cart[product.id]}/>
+            <button onClick={() => {
+                setCart({
+                    ...cart,
+                    [product.id]: parseInt(document.getElementById(`cart-${product.id}-value`).value),
+                })
+            }}>Change Item Quantity</button>
+
+            <button onClick={() => {
+                const newCart = {...cart}
+                delete newCart[product.id]
+                setCart(newCart)
+            }}>Remove From Cart</button>
             </div>)
         }): <h2>Empty Cart</h2>}
             </main>
