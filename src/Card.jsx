@@ -21,7 +21,7 @@ const Card = ({ product }) => {
             </Link>
             <div className="product-description"><p>{product.description}</p></div>
             </div>
-
+            <div className="product-price">${product.price}</div>
             <div className="card-footer">
                     <input type="number" id={product.id}/>
                     <button onClick={ () => {
