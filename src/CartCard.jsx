@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import CartContext from "./CartContext";
 
 const CartCard = ({ product }) => {
     const {cart, setCart} = useContext(CartContext)
+    const productValueRef = useRef(null)
     return (
     <div className="cart-item" id={`cart-item-${product.id}`}>
         <div className="product-title"><h2>{product.title}</h2></div>
@@ -15,11 +16,11 @@ const CartCard = ({ product }) => {
         </div>
         <div className="edit-item">
 
-        <input type="number" id={`cart-${product.id}-value`} defaultValue={cart[product.id]}/>
+        <input type="number" id={`cart-${product.id}-value`} defaultValue={cart[product.id]} ref={productValueRef}/>
         <button onClick={() => {
             setCart({
                 ...cart,
-                [product.id]: parseInt(document.getElementById(`cart-${product.id}-value`).value),
+                [product.id]: parseInt(productValueRef.current.value),
             })
         }}>Change Item Quantity</button>
 
