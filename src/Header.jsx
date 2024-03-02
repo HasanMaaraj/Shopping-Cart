@@ -8,14 +8,14 @@ const Header = () => {
     const {cart, setCart} = useContext(CartContext)
     return (
         <header>
-            <h2>{Object.keys(cart).length}</h2>
-            <h2>{...Object.keys(cart)}</h2>
-            <h2>{...Object.values(cart)}</h2>
+            <h1>Hasan's Fake Shop</h1>
+            <div className="links">
             <Link to="/">Home</Link>
             <Link to="/shop">Shop</Link>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">Cart {Object.keys(cart).length}</Link>
+            </div>
         </header>
     )
 }
 
-export default Header
+export default Header;
