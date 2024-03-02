@@ -46,6 +46,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  min-width: 8rem;
 }
 button:hover {
   border-color: #646cff;
@@ -93,13 +94,13 @@ header {
 }
 
 .container {
-  background-color: #ecfd8c;
   height: 100%;
+  width: 100%;
   display: grid;
-  grid-template-rows: 20vh 1fr;
 }
 
 main {
+  background-color: #ecfd8c;
   align-self: center;
   padding: 2rem;
   min-height: 40rem;
@@ -215,6 +216,24 @@ input {
   gap: 3rem;
   font-weight: bold;
 }
+
+.product {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 5fr;
+}
+
+.product>* {
+  grid-column-start: 2;
+}
+
+.product .product-image {
+  grid-column-start: 1;
+  grid-row: 1/6;
+  height: 30rem;
+  width: auto;
+}
+
 
 footer {
   display: grid;
