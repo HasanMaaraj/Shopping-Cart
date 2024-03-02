@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import { Link } from "react-router-dom"
 import  CartContext  from "./CartContext";
 
 const Card = ({ product }) => {
     const {cart, setCart} = useContext(CartContext);
-    
+    const productValueRef = useRef(null)
     return (
         <div className="card">
             
@@ -23,9 +23,9 @@ const Card = ({ product }) => {
             </div>
             <div className="product-price">${product.price}</div>
             <div className="card-footer">
-                    <input type="number" id={product.id}/>
+                    <input type="number" id={product.id} ref={productValueRef}/>
                     <button onClick={ () => {
-                        const placedItems = parseInt(document.querySelector(`input[id="${product.id}"]`).value);
+                        const placedItems = parseInt(productValueRef.current.value);
                         setCart(() => {
                             return {
                                 ...cart,
