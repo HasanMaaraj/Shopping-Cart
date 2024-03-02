@@ -9,7 +9,7 @@ function App() {
     <Header />
     <main>
       <h1>
-      <Link to='/shop'>shop</Link>
+      Welcome to my <Link to='/shop'>shop</Link>
       </h1>
     </main>
     <Footer />
