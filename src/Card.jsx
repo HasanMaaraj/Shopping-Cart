@@ -23,16 +23,18 @@ const Card = ({ product }) => {
             </div>
             <div className="product-price">${product.price}</div>
             <div className="card-footer">
-                    <input type="number" id={product.id} ref={productValueRef}/>
+                    <input type="number" id={product.id} min="0" ref={productValueRef}/>
                     <button onClick={ () => {
                         const placedItems = parseInt(productValueRef.current.value);
-                        setCart(() => {
-                            return {
-                                ...cart,
-                                [product.id]: cart[product.id] ? cart[product.id]+placedItems : placedItems
-                            }
-                        })
-                    } }>Add to Cart</button>
+                        if (placedItems > 0) {
+                            setCart(() => {
+                                return {
+                                    ...cart,
+                                    [product.id]: cart[product.id] ? cart[product.id]+placedItems : placedItems
+                                }
+                            })
+                        }
+                    }}>Add to Cart</button>
             </div>
         </div>
     )

@@ -16,12 +16,19 @@ const CartCard = ({ product }) => {
         </div>
         <div className="edit-item">
 
-        <input type="number" id={`cart-${product.id}-value`} defaultValue={cart[product.id]} ref={productValueRef}/>
+        <input type="number" id={`cart-${product.id}-value`} defaultValue={cart[product.id]} min="0" ref={productValueRef}/>
         <button onClick={() => {
-            setCart({
-                ...cart,
-                [product.id]: parseInt(productValueRef.current.value),
-            })
+            const newItemValue = parseInt(productValueRef.current.value)
+            if (newItemValue > 0) {
+                setCart({
+                    ...cart,
+                    [product.id]: parseInt(productValueRef.current.value),
+                })
+            } else if (newItemValue === 0) {
+                const newCart = {...cart}
+                delete newCart[product.id]
+                setCart(newCart)
+            }
         }}>Change Item Quantity</button>
 
         <button className="remove-btn" onClick={() => {
