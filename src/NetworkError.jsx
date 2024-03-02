@@ -1,4 +1,5 @@
 import Header from "./Header";
+import Footer from "./Footer";
 import { Link } from "react-router-dom";
 
 const NetworkError = () => {
@@ -11,6 +12,7 @@ const NetworkError = () => {
                 You can go back to the home page by clicking here, though!
                 </Link>
             </main>
+            <Footer />
         </div>
     )
 }

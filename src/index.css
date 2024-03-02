@@ -68,8 +68,12 @@ button:focus-visible {
   }
 }
 
-header {
+header,
+footer {
   background-color: #4d9cbb;
+}
+
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -210,4 +214,19 @@ input {
   align-items: center;
   gap: 3rem;
   font-weight: bold;
+}
+
+footer {
+  display: grid;
+  padding: 2rem;
+}
+/* #github-image */
+footer img {
+  height: 3rem;
+  width: auto;
+}
+
+footer a {
+  color: purple;
+  text-decoration: underline;
 }

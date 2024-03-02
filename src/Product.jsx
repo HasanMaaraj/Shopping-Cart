@@ -2,9 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CartContext from "./CartContext";
 import Header from "./Header";
+import Footer from "./Footer";
 import Loading from "./Loading";
 import NetworkError from "./NetworkError";
-
 const Product = () => {
     const { id } = useParams();
     const [product, setProduct] = useState(null)
@@ -47,6 +47,7 @@ const Product = () => {
                     } }>Add to Cart</button>
                 </div>
             </main>
+            <Footer />
     </div>
     )
 };

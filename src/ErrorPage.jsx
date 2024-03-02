@@ -1,5 +1,6 @@
 import Header from "./Header";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const ErrorPage = () => {
   return (
@@ -11,6 +12,7 @@ const ErrorPage = () => {
         You can go back to the home page by clicking here, though!
         </Link>
     </main>
+    <Footer />
 </div>
   );
 };

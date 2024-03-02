@@ -1,4 +1,5 @@
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Loading = () => {
     return (
@@ -7,6 +8,7 @@ const Loading = () => {
             <main>
             <p>Loading...</p>
             </main>
+            <Footer />
         </div>
     )
 }

@@ -4,6 +4,7 @@ import  CartContext  from "./CartContext";
 import Header from "./Header";
 import Loading from "./Loading";
 import NetworkError from "./NetworkError";
+import Footer from "./Footer";
 
 const Shop = () => {
 
@@ -39,6 +40,7 @@ const Shop = () => {
                         })}
                 </div>
             </main>
+            <Footer />
         </div>
     )
 };
